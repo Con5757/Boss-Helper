@@ -1,37 +1,5 @@
 # Notes: this isnt a readme file btw, this is just what needs to be worked on
 
-Monkey Data (Costs + Stats)
-
- Ice Monkey
- Glue Gunner
- Sniper Monkey
- Monkey Sub
- Monkey Buccaneer
- Monkey Ace
- Heli Pilot
- Mortar Monkey
- Dartling Gunner
- Wizard Monkey
- Super Monkey
- Ninja Monkey
- Alchemist
- Druid
- Mermonkey
- Banana Farm
- Spike Factory
- Monkey Village
- Engineer Monkey
- Beast Handler
-
-Monkey Stats Needed (for each monkey)
-
- Base damage
- Base attack speed
- Base pierce
- Base range
- How each upgrade modifies these stats
- Special abilities (buffs, debuffs, etc.)
-
 Map Data
 
  List all available maps
