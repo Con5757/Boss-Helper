@@ -1,7 +1,111 @@
-import math
-import time
+# con made ts cus im ass at boss events but ik how to make computers do things for me
 
 Bosses = ["vortex", "phaze", "lych", "blastapopoulos", "dreadbloon", "bloonarius"]
+
+#maps; WATER; false, small, mid, lots
+maps = { 
+    "monkey meadow": {
+        "water": False,
+    },
+    "in the loop": {
+        "water": "small",
+    },
+    "three mines round": {
+    },
+    "spa pits": {
+        "water": "lots",
+    },
+    "tinkerton": {
+        "water": "mid",
+    },
+    "tree stump": {
+        "water": False,
+    },
+    "town center": {
+        "water": "mid",
+    },
+    "middle of the road": {
+        "water": "small",
+    },
+    "one two tree": {
+        "water": False,
+    },
+    "scrapyard": {
+        "water": False,
+    },
+    "the cabin": {
+        "water": "lots",
+    },
+    "resort": {
+        "water": "mid",
+    },
+    "skates": {
+        "water": "lots",
+    },
+    "lotus island": {
+        "water": "lots",
+    },
+    "candy falls": {
+        "water": "lots",
+    },
+    "winter park": {
+        "water": "small",
+    },
+    "carved": {
+        "water": "mid",
+    },
+    "park path": {
+        "water": "mid",
+    },
+    "alpine run": {
+        "water": False,
+    },
+    "frozen over": {
+        "water": "mid",  
+    },
+    "cubism": {
+        "water": "lots",
+    },
+    "four circles": {
+        "water": "mid",
+    },
+    "hedge": {
+        "water": False,
+    },
+    "end of the road": {
+        "water": "mid",
+    },
+    "logs": {
+        "water": "small",
+    },
+}
+
+boss_speedmulti = {
+    "bloonarius": {
+        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
+        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+    },
+    "lych": {
+        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
+        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+    },
+    "vortex": {
+        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
+        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+    },
+    "phaze": {
+        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
+        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+    },
+    "dreadbloon": {
+        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
+        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+    },
+    "blastapopoulos": {
+        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
+        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+    },
+}
 
 bloonarius_hp = {
     "normal": {1: 20000, 2: 75000, 3: 350000, 4: 750000, 5: 3000000},
@@ -1281,6 +1385,31 @@ ranked_modes          = ["least cash", "least tiers", "timed"]
 boss_difficulty_modes = ["normal", "elite"]
 game_difficulty_modes = ["easy", "medium", "hard", "impoppable"]
 
+def has_water(map_name): 
+    map_data = maps.get(map_name.lower())
+    if map_data:
+        return map_data.get("water", False)
+    return False
+
+def can_use_water_strategy(map_name, strategy_type="basic"):
+    """
+    Check if map supports a water strategy.
+    strategy_type options:
+    - "basic": Just needs any water (Sub, Buccaneer)
+    - "favored_trades": Needs mid/lots (5+ boats for Favored Trades buff)
+    - "max_trades": Needs lots (10+ boats for max Favored Trades/Trade Empire)
+    """
+    water = has_water(map_name)
+    
+    if strategy_type == "basic":
+        return water in ["small", "mid", "lots"]
+    elif strategy_type == "favored_trades":
+        return water in ["mid", "lots"]
+    elif strategy_type == "max_trades":
+        return water == "lots"
+    
+    return False
+
 def get_upgrade_cost(monkey, path, tier, game_difficulty):
     """Get the cost of a specific upgrade adjusted for difficulty."""
     base_cost = monkey["upgrades"][path][tier - 1]
@@ -1408,7 +1537,6 @@ def boss_calculation():
 
     # --- Modifiers ---
     print("\nIf no modifier is mentioned, enter 100")
-    time.sleep(0.3)
 
     while True:
         speed_raw = input("Speed modifier in %: ").replace('%', '').strip()
@@ -1437,6 +1565,14 @@ def boss_calculation():
         else:
             print(f"  Warning: '{name}' not recognised, skipping.")
     banned_monkeys = valid_banned
+
+    # map selection
+    while True:
+        map_name = input("\nMap name: ").lower().strip()
+        if map_name in maps:
+            break
+        else:
+            print(f"map not in list")
 
     # ---- Compute HP ----
     hp_data = get_boss_hp(boss, boss_difficulty, stage, health_modifier)
