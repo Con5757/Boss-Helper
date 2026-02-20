@@ -3,107 +3,188 @@
 Bosses = ["vortex", "phaze", "lych", "blastapopoulos", "dreadbloon", "bloonarius"]
 
 #maps; WATER; false, small, mid, lots
-maps = { 
+maps = {
+
+    ### beginner
+
     "monkey meadow": {
         "water": False,
+        "rbs": 32.745
     },
     "in the loop": {
         "water": "small",
+        "rbs": 44.390
     },
     "three mines round": {
+        "water": "small",
+        "rbs": 48.52
     },
     "spa pits": {
         "water": "lots",
+        "rbs": 57.140
     },
     "tinkerton": {
         "water": "mid",
+        "rbs": 44.39
     },
     "tree stump": {
         "water": False,
+        "rbs": 44.265
     },
     "town center": {
         "water": "mid",
+        "rbs": 34.650
     },
     "middle of the road": {
         "water": "small",
+        "rbs": 45.20
     },
     "one two tree": {
         "water": False,
+        "rbs": 43.88
     },
     "scrapyard": {
         "water": False,
+        "rbs": 60.730
     },
     "the cabin": {
         "water": "lots",
+        "rbs": 34.645
     },
     "resort": {
         "water": "mid",
+        "rbs": 54.330
     },
     "skates": {
         "water": "lots",
+        "rbs": 42.980
     },
     "lotus island": {
         "water": "lots",
+        "rbs": 37.195
     },
     "candy falls": {
         "water": "lots",
+        "rbs": 47.915
     },
     "winter park": {
         "water": "small",
+        "rbs": 41.050
     },
     "carved": {
         "water": "mid",
+        "rbs": 44.670
     },
     "park path": {
         "water": "mid",
+        "rbs": 40.215
     },
     "alpine run": {
         "water": False,
+        "rbs": 36.550
     },
     "frozen over": {
         "water": "mid",  
+        "rbs": 40.370
     },
     "cubism": {
         "water": "lots",
+        "rbs": 49.215
     },
     "four circles": {
         "water": "mid",
+        "rbs": 41.415
     },
     "hedge": {
         "water": False,
+        "rbs": 43.775
     },
     "end of the road": {
         "water": "mid",
+        "rbs": 30.045
     },
     "logs": {
         "water": "small",
+        "rbs": 60.330
     },
+
+    ### inter
+
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    "": {
+        "water":,
+        "rbs":
+    },
+    
 }
 
 boss_speedmulti = {
     "bloonarius": {
-        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
-        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+        "normal": [0.05, 0.05, 0.05, 0.06, 0.06],
+        "elite": [0.05, 0.05, 0.05, 0.06, 0.06]
     },
     "lych": {
-        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
-        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+        "normal": [0.092, 0.092, 0.10, 0.108, 0.108],
+        "elite": [0.10, 0.108, 0.116, 0.12, 0.124]
     },
     "vortex": {
-        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
-        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+        "normal": [0.144, 0.114, 0.156, 0.162, 0.1680],
+        "elite": [0.15, 0.162, 0.18, 0.186, 0.192]
     },
     "phaze": {
-        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
-        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+        "normal": [0.0468, 0.0468, 0.0504, 0.0522, 0.0522],
+        "elite": [0.0522, 0.052, 0.0558, 0.0576, 0.0596]
     },
     "dreadbloon": {
-        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
-        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+        "normal": [0.05, 0.05, 0.05, 0.06, 0.06],
+        "elite": [0.052, 0.052, 0.052, 0.06, 0.06]
     },
     "blastapopoulos": {
-        "normal": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx],
-        "elite": [0.xx, 0.xx, 0.xx, 0.xx, 0.xx]
+        "normal": [0.0440, 0.0462, 0.0508, 0.0584, 0.0731],
+        "elite": [0.0440, 0.0462, 0.0508, 0.0584, 0.0731]
     },
 }
 
@@ -1477,6 +1558,57 @@ def filter_banned(banned_list):
     """Return all monkeys minus banned ones."""
     return {name: data for name, data in all_monkeys.items()
             if name not in banned_list}
+
+def get_boss_exit_time(map_name, boss_name, stage, boss_difficulty, speed_modifier=100):
+    """
+    Calculate how long it takes a boss to reach the exit.
+    
+    Args:
+        map_name: Name of the map (e.g., "logs")
+        boss_name: Name of the boss (e.g., "bloonarius")
+        stage: Boss stage (1-5)
+        boss_difficulty: "normal" or "elite"
+        speed_modifier: Event speed modifier in % (default 100)
+    
+    Returns:
+        Time in seconds for boss to exit, or None if data missing
+    """
+    # Get map data
+    map_data = maps.get(map_name.lower())
+    if not map_data:
+        print(f"Warning: Map '{map_name}' not found in database")
+        return None
+    
+    red_time = map_data.get("rbs")
+    if not red_time:
+        print(f"Warning: No red bloon time data for '{map_name}'")
+        return None
+    
+    # Get boss speed multiplier for this stage
+    boss_speeds = boss_speedmulti.get(boss_name.lower())
+    if not boss_speeds:
+        print(f"Warning: Boss '{boss_name}' not found in speed database")
+        return None
+    
+    difficulty_speeds = boss_speeds.get(boss_difficulty.lower())
+    if not difficulty_speeds:
+        print(f"Warning: No speed data for {boss_difficulty} {boss_name}")
+        return None
+    
+    # Stages are 1-indexed but list is 0-indexed
+    if stage < 1 or stage > 5:
+        print(f"Warning: Stage must be 1-5, got {stage}")
+        return None
+    
+    boss_speed_percent = difficulty_speeds[stage - 1]
+    
+    # Calculate boss exit time
+    # Boss time = red time / boss speed multiplier
+    # Then apply event speed modifier
+    base_boss_time = red_time / boss_speed_percent
+    actual_time = base_boss_time / (speed_modifier / 100)
+    
+    return actual_time
 
 def get_dreadbloon_requirements(available_monkeys):
     """
