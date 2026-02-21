@@ -110,55 +110,110 @@ maps = {
 
     ### inter
 
+    "lost crevasse": {
+        "water": "mid",
+        "rbs": 24.68 
+    },
+    "luminous cove": {
+        "water": "lots",
+        "rbs": 32.20
+    },
+    "sulfur springs": {
+        "water":"mid",
+        "rbs": 37.25 
+    },
+    "water park": {
+        "water": "lots",
+        "rbs": 30.52 
+    },
+    "polyphemus": {
+        "water": "lots",
+        "rbs": 21.94                                                                             
+    },
+    "covered garden": {
+        "water":,
+        "rbs":
+    },
+    "quarry": {
+        "water":,
+        "rbs":
+    },
+    "quiet street": {
+        "water":,
+        "rbs":
+    },
+    "bloonarius prime": {
+        "water":,
+        "rbs":
+    },
+    "balance": {
+        "water":,
+        "rbs":
+    },
+    "encrypted": {
+        "water":,
+        "rbs":
+    },
+    "bazaar": {
+        "water":,
+        "rbs":
+    },
+    "adoras temple": {
+        "water":,
+        "rbs":
+    },
+    "spring spring": {
+        "water":,
+        "rbs":
+    },
+    "kartsndarts": {
+        "water":,
+        "rbs":
+    },
+    "moon landing": {
+        "water":,
+        "rbs":
+    },
+    "haunted": {
+        "water":,
+        "rbs":
+    },
+    "downstream": {
+        "water":,
+        "rbs":
+    },
+    "firing range": {
+        "water":,
+        "rbs":
+    },
+    "cracked": {
+        "water":,
+        "rbs":
+    },
+    "steambed": {
+        "water":,
+        "rbs":
+    },
+    "chutes": {
+        "water":,
+        "rbs":
+    },
+    "rake": {
+        "water":,
+        "rbs":
+    },
+    "spice islands": {
+        "water":,
+        "rbs":
+    },
+
+    ### advanced
+
     "": {
         "water":,
         "rbs":
     },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    "": {
-        "water":,
-        "rbs":
-    },
-    
+
 }
 
 boss_speedmulti = {
